@@ -1,0 +1,18 @@
+diff --git a/shop/shop/urls.py b/shop/urls.py
+rename from shop/shop/urls.py
+rename to shop/urls.py
+diff --git a/shop/shop/wsgi.py b/shop/wsgi.py
+rename from shop/shop/wsgi.py
+rename to shop/wsgi.py
+diff --git a/shop/shop/__init__.py b/shop/__init__.py
+rename from shop/shop/__init__.py
+rename to shop/__init__.py
+diff --git a/shop/shop/asgi.py b/shop/asgi.py
+rename from shop/shop/asgi.py
+rename to shop/asgi.py
+diff --git a/shop/shop/settings.py b/shop/settings.py
+rename from shop/shop/settings.py
+rename to shop/settings.py
+diff --git a/shop/manage.py b/manage.py
+rename from shop/manage.py
+rename to manage.py
