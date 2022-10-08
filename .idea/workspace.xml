@@ -1,28 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ba6037fe-5505-44ca-a605-420fd94cccf3" name="Changes" comment="items app + flake8">
-      <change afterPath="$PROJECT_DIR$/feedbacks/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/feedbacks/admin.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/feedbacks/apps.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/feedbacks/forms.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/feedbacks/migrations/0001_initial.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/feedbacks/migrations/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/feedbacks/model_forms.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/feedbacks/models.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/feedbacks/tests.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/feedbacks/urls.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/feedbacks/views.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/items/model_forms.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/items/urls.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/feedbacks/feedback.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/items/index.html" afterDir="false" />
+    <list default="true" id="ba6037fe-5505-44ca-a605-420fd94cccf3" name="Changes" comment="test commit for 8 hw">
+      <change afterPath="$PROJECT_DIR$/items/forms.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/feedbacks/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/items/migrations/0001_initial.py" beforeDir="false" afterPath="$PROJECT_DIR$/items/migrations/0001_initial.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/items/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/items/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/orders/migrations/0001_initial.py" beforeDir="false" afterPath="$PROJECT_DIR$/orders/migrations/0001_initial.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/items/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/items/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/shop/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/shop/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/items/index_html.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/shop/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/feedbacks/feedback.html" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -159,7 +146,14 @@
       <option name="project" value="LOCAL" />
       <updated>1664693263725</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="test commit for 8 hw">
+      <created>1665235735183</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1665235735183</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -181,6 +175,7 @@
     <MESSAGE value="django py ver 3.9 only" />
     <MESSAGE value="django environ" />
     <MESSAGE value="items app + flake8" />
-    <option name="LAST_COMMIT_MESSAGE" value="items app + flake8" />
+    <MESSAGE value="test commit for 8 hw" />
+    <option name="LAST_COMMIT_MESSAGE" value="test commit for 8 hw" />
   </component>
 </project>
