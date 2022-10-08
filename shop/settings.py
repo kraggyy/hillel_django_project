@@ -43,7 +43,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     # own apps
     'items',
-    'orders'
+    'orders',
+    'feedbacks'
 ]
 
 MIDDLEWARE = [
