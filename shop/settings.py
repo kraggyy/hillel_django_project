@@ -44,7 +44,8 @@ INSTALLED_APPS = [
     # own apps
     'items',
     'orders',
-    'feedbacks'
+    'feedbacks',
+    'users'
 ]
 
 MIDDLEWARE = [
