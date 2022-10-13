@@ -17,13 +17,13 @@ from django.contrib import admin
 from django.urls import path, include
 
 from items.urls import urlpatterns as items_urlpatterns
-# from users.urls import urlpatterns as users_urlpatterns # noqa
+from users.urls import urlpatterns as users_urlpatterns
 from feedbacks.urls import urlpatterns as feedbacks_urlpatterns
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include(items_urlpatterns)),
-    # path('', include(users_urlpatterns)), # noqa
+    path('', include(users_urlpatterns)),
     path('', include(feedbacks_urlpatterns)),
 ]
 
