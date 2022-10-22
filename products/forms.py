@@ -1,7 +1,7 @@
 import csv
 import decimal
-from io import StringIO
 
+import codecs
 from django import forms
 from django.core.exceptions import ValidationError
 from django.core.validators import FileExtensionValidator
@@ -16,7 +16,7 @@ class ImportCSVForm(forms.Form):
 
     def clean_file(self):
         csv_file = self.cleaned_data['file']
-        reader = csv.DictReader(StringIO(csv_file.read().decode('utf-8')))
+        reader = csv.DictReader(codecs.iterdecode(csv_file, 'utf-8'))
         products_list = []
         for product in reader:
             try:
@@ -38,5 +38,4 @@ class ImportCSVForm(forms.Form):
         return products_list
 
     def save(self):
-        products_list = self.cleaned_data['file']
-        Product.objects.bulk_create(products_list)
+        Product.objects.bulk_create(self.cleaned_data['file'])
