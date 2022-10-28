@@ -1,33 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ba6037fe-5505-44ca-a605-420fd94cccf3" name="Changes" comment="csv update">
-      <change afterPath="$PROJECT_DIR$/main/templatetags/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/main/templatetags/breadcrumbs.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/main/templatetags/replace.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/images/category/3c990272-f315-4205-8e39-492847fa4c7e/image.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/images/product/9782d9ca-52e5-4b1a-b841-417a1ddc61b6/image.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/orders/forms.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/orders/mixins.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/orders/signals.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/orders/urls.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/orders/cart.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/parts/breadcrumbs.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/parts/footer.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/parts/forms/simple_form.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/parts/header.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_17_10_2022,_15_58_[Changes]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_17_10_2022__15_58__Changes_.xml" beforeDir="false" />
+    <list default="true" id="ba6037fe-5505-44ca-a605-420fd94cccf3" name="Changes" comment="cart">
+      <change afterPath="$PROJECT_DIR$/dump.rdb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/shop/celery.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/shop/middlewares.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/shop/tasks.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tracking/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tracking/admin.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tracking/apps.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tracking/migrations/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tracking/models.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tracking/tests.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tracking/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/feedbacks/migrations/0001_initial.py" beforeDir="false" afterPath="$PROJECT_DIR$/feedbacks/migrations/0001_initial.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/orders/migrations/0001_initial.py" beforeDir="false" afterPath="$PROJECT_DIR$/orders/migrations/0001_initial.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/orders/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/orders/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/orders/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/orders/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/products/migrations/0001_initial.py" beforeDir="false" afterPath="$PROJECT_DIR$/products/migrations/0001_initial.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/shop/__init__.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/shop/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/shop/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shop/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/shop/urls.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -227,7 +216,21 @@
       <option name="project" value="LOCAL" />
       <updated>1666451358279</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="csv update">
+      <created>1666981667571</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1666981667571</updated>
+    </task>
+    <task id="LOCAL-00020" summary="cart">
+      <created>1666981797149</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1666981797149</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -254,6 +257,7 @@
     <MESSAGE value="commit for 9 hw" />
     <MESSAGE value=" bootstrap + csv" />
     <MESSAGE value="csv update" />
-    <option name="LAST_COMMIT_MESSAGE" value="csv update" />
+    <MESSAGE value="cart" />
+    <option name="LAST_COMMIT_MESSAGE" value="cart" />
   </component>
 </project>
