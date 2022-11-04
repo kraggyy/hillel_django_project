@@ -1,21 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ba6037fe-5505-44ca-a605-420fd94cccf3" name="Changes" comment="cart">
-      <change afterPath="$PROJECT_DIR$/currencies/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/currencies/admin.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/currencies/apps.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/currencies/clients/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/currencies/clients/client.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/currencies/migrations/0001_initial.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/currencies/migrations/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/currencies/models.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/products/migrations/0002_product_currency.py" afterDir="false" />
+    <list default="true" id="ba6037fe-5505-44ca-a605-420fd94cccf3" name="Changes" comment="celerybeat + currencies">
+      <change afterPath="$PROJECT_DIR$/currencies/tasks.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/products/helpers.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/products/tasks.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dump.rdb" beforeDir="false" afterPath="$PROJECT_DIR$/dump.rdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/feedbacks/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/feedbacks/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/feedbacks/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/feedbacks/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/products/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/products/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shop/model_choices.py" beforeDir="false" afterPath="$PROJECT_DIR$/shop/model_choices.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/shop/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/shop/settings.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -230,7 +224,14 @@
       <option name="project" value="LOCAL" />
       <updated>1666981797149</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="celerybeat + currencies">
+      <created>1667491070297</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1667491070297</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -258,6 +259,7 @@
     <MESSAGE value=" bootstrap + csv" />
     <MESSAGE value="csv update" />
     <MESSAGE value="cart" />
-    <option name="LAST_COMMIT_MESSAGE" value="cart" />
+    <MESSAGE value="celerybeat + currencies" />
+    <option name="LAST_COMMIT_MESSAGE" value="celerybeat + currencies" />
   </component>
 </project>
