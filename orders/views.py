@@ -1,52 +1,86 @@
-from django.contrib.auth.decorators import login_required
-from django.db.models import F
+from django.contrib.auth.mixins import LoginRequiredMixin
+from django.shortcuts import render
 from django.urls import reverse_lazy
-from django.utils.decorators import method_decorator
 from django.views.generic import RedirectView, TemplateView
 
-from orders.forms import UpdateCartOrderForm, RecalculateCartForm
-from orders.mixins import GetCurrentOrderMixin
+from orders.forms import AddShoppingCartForm, DeleteShoppingCartForm, \
+    DiscountShoppingCartForm
+from orders.models import Order
 
 
-class CartView(GetCurrentOrderMixin, TemplateView):
-    template_name = 'orders/cart.html'
-
-    @method_decorator(login_required)
-    def dispatch(self, request, *args, **kwargs):
-        return super().dispatch(request, *args, **kwargs)
-
-    def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
-        context.update(
-            {'order': self.get_object(),
-             'products_relation': self.get_queryset()}
-        )
-        return context
-
-    def get_queryset(self):
-        return self.get_object().products.through.objects \
-            .select_related('product') \
-            .annotate(full_price=F('product__price') * F('quantity'))
-
-
-class UpdateCartView(GetCurrentOrderMixin, RedirectView):
+class BaseShoppingCartRedirectView(RedirectView):
+    url = reverse_lazy('shopping_cart')
 
     def post(self, request, *args, **kwargs):
-        form = UpdateCartOrderForm(request.POST, instance=self.get_object())
-        if form.is_valid():
-            form.save(kwargs.get('action'))
+        self.order = Order.objects.get_or_create(is_active=True,  # noqa
+                                                 is_paid=False,
+                                                 user=self.request.user)[0]
         return self.get(request, *args, **kwargs)
 
-    def get_redirect_url(self, *args, **kwargs):
-        return reverse_lazy(
-            'cart' if kwargs['action'] == 'remove' else 'products')
+
+class ShoppingCartView(LoginRequiredMixin, TemplateView):
+    template_name = 'orders/shopping_cart_view.html'
+
+    def get_context_data(self, **kwargs):
+        context = super(ShoppingCartView, self).get_context_data()
+        context.update({
+            'order': Order.objects.get_or_create(is_active=True,
+                                                 is_paid=False,
+                                                 user=self.request.user)[0]
+        })
+        return context
 
 
-class RecalculateCartView(GetCurrentOrderMixin, RedirectView):
-    url = reverse_lazy('cart')
+class AddShoppingCartView(BaseShoppingCartRedirectView):
+    url = reverse_lazy('products')
 
     def post(self, request, *args, **kwargs):
-        form = RecalculateCartForm(request.POST, instance=self.get_object())
+        super(AddShoppingCartView, self).post(request, *args, *kwargs)
+        form = AddShoppingCartForm(request.POST, order=self.order)
         if form.is_valid():
             form.save()
         return self.get(request, *args, **kwargs)
+
+
+class DeleteShoppingCartView(BaseShoppingCartRedirectView):
+
+    def post(self, request, *args, **kwargs):
+        super(DeleteShoppingCartView, self).post(request, *args, *kwargs)
+        form = DeleteShoppingCartForm(request.POST, order=self.order)
+        if form.is_valid():
+            form.save()
+        return self.get(request, *args, **kwargs)
+
+
+class ClearShoppingCartView(BaseShoppingCartRedirectView):
+    url = reverse_lazy('products')
+
+    def post(self, request, *args, **kwargs):
+        super(ClearShoppingCartView, self).post(request, *args, *kwargs)
+        self.order.delete()
+        return self.get(request, *args, **kwargs)
+
+
+class DiscountShoppingCartView(BaseShoppingCartRedirectView):
+
+    def post(self, request, *args, **kwargs):
+        super(DiscountShoppingCartView, self).post(request, *args, *kwargs)
+        form = DiscountShoppingCartForm(request.POST, order=self.order)
+        if form.is_valid():
+            form.save()
+        return self.get(request, *args, **kwargs)
+
+
+class PayShoppingCartView(BaseShoppingCartRedirectView):
+    url = reverse_lazy('successful_pay')
+
+    def post(self, request, *args, **kwargs):
+        super(PayShoppingCartView, self).post(request, *args, *kwargs)
+        if self.order.products.exists():
+            self.order.is_active, self.order.is_paid = self.order.is_paid, self.order.is_active # noqa
+            self.order.save()
+        return self.get(request, *args, **kwargs)
+
+
+def successful_pay(request, *args, **kwargs):
+    return render(request, template_name='orders/successful_pay.html')

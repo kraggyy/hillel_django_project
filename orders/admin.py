@@ -1,5 +1,3 @@
-
-
 from django.contrib import admin
 
 from orders.models import Order, Discount
@@ -7,8 +5,7 @@ from orders.models import Order, Discount
 
 @admin.register(Order)
 class OrderAdmin(admin.ModelAdmin):
-    readonly_fields = ('discounted',)
-    list_display = ('id', 'user', 'total_amount', 'discount', 'discounted')
+    list_display = ('id', 'user', 'total_amount', 'discount')
     filter_horizontal = ('products',)
 
     def discounted(self, obj=None):

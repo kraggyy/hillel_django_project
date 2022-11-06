@@ -1,51 +1,62 @@
 {% extends 'base.html' %}
-{% load static breadcrumbs %}
-{% block breadcrumbs %}
-    {% breadcrumbs 'Home,main,0' 'Products,products,0' 'Product,products,1' as tags %}
-    {% include 'parts/breadcrumbs.html' with tags=tags %}
-{% endblock breadcrumbs %}
+{% load static %}
+{% block title %}
+    {{ product.name }}
+{% endblock %}
 {% block content %}
     <section>
         <div class="container">
-            <div class="row">
-                <div class="col-12 col-lg-6 offset-lg-3">
-                    <div class="card mb-3">
-                        {% if product.image %}
-                            <figure class="text-center">
+            <div class="text-center">
+                <h1>{{ product.name }}</h1>
+                <div class="row">
+                    <div class="col-12 col-lg-6 offset-lg-3">
+                        <div class="mb-3">
+                            <div class="card border-primary"
+                                 style="width: 45rem;">
                                 <img src="{{ product.image.url }}"
                                      class="product-image p-3"
                                      alt="{{ product.name }}">
-                            </figure>
-                        {% endif %}
-                        <div class="card-body">
-                            <h5 class="card-title">{{ product.name }}</h5>
-                            <p class="small">{{ product.category.name }}</p>
-                            <p class="small">{{ product.sku }}</p>
-                            <p class="card-text">
-                                {{ product.description }}
-                            </p>
-                            {% if product.products.exists %}
-                                <p>Including:</p>
-                                {% for sub in product.products.iterator %}
-                                    <div class="d-inline-flex flex-column rounded border p-2">
-                                        <p>{{ sub.name }}</p>
-                                        <figure class="text-center d-inline">
-                                            <img src="{{ sub.image.url }}"
-                                                 class="product-image p-3"
-                                                 alt="{{ product.name }}">
-                                        </figure>
-                                    </div>
-                                {% endfor %}
-                            {% endif %}
-                            <div class="h3">
-                                {{ product.price }} UAH
+                                <div class="card-body">
+                                    <h5 class="card-title">{{ product.name }}</h5>
+                                    <h6 class="card-subtitle mb-2 text-muted">{{ product.category.name }}</h6>
+                                    <h6 class="card-subtitle mb-2 text-muted">
+                                        SKU: {{ product.sku }}</h6>
+                                    <p class="card-text">
+                                        {{ product.description }} <br>
+                                        <br>
+                                        {% if product.products.exists %}
+                                            <p>Including:</p>
+                                            {% for sub in product.products.iterator %}
+                                                <p>{{ sub.name }}</p>
+                                            {% endfor %}
+                                        {% endif %}
+                                    <i>Price
+                                        in {{ product.currency }}: {{ product.price }} </i><br>
+                                    {% if product.currency != 'UAH' %}
+                                        <i>Price in UAH: {{ product.actual_price }}</i>
+                                    {% endif %}
+                                    {% if request.user.is_authenticated %}
+                                        <form method="post"
+                                              action="{% url 'add_shopping_cart' %}">
+                                            {% csrf_token %}
+                                            <input type="hidden"
+                                                   value="{{ product.id }}"
+                                                   name="product_uuid">
+                                            <input type="submit"
+                                                   class="btn btn-primary"
+                                                   value="Buy it">
+                                        </form>
+                                    {% else %}
+                                        <a href="{% url 'login' %}"
+                                           class="btn btn-primary">
+                                            Login to buy
+                                        </a>
+                                    {% endif %}
+                                </div>
                             </div>
-                            <a href="#" class="btn btn-primary">Add to
-                                cart</a>
                         </div>
                     </div>
                 </div>
-
             </div>
         </div>
     </section>

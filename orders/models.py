@@ -1,8 +1,9 @@
+from decimal import Decimal
+
 from django.contrib.auth import get_user_model
 from django.db import models
-from django.db.models import Case, When, Sum, F
 from django_lifecycle import LifecycleModelMixin, hook, AFTER_UPDATE, \
-    BEFORE_UPDATE
+    BEFORE_SAVE
 
 from shop.constants import MAX_DIGITS, DECIMAL_PLACES
 from shop.mixins.models_mixins import PKMixin
@@ -10,25 +11,19 @@ from shop.model_choices import DiscountTypes
 
 
 class Discount(PKMixin):
-    amount = models.DecimalField(
-        max_digits=MAX_DIGITS,
-        decimal_places=DECIMAL_PLACES,
-        default=0
-    )
+    amount = models.DecimalField(max_digits=MAX_DIGITS,
+                                 decimal_places=DECIMAL_PLACES,
+                                 default=0)
     code = models.CharField(
-        max_length=32
-    )
+        max_length=30)
     is_active = models.BooleanField(
-        default=True
-    )
+        default=True)
     discount_type = models.PositiveSmallIntegerField(
         choices=DiscountTypes.choices,
-        default=DiscountTypes.VALUE
-    )
+        default=DiscountTypes.VALUE)
 
     def __str__(self):
-        return f"{self.amount} | {self.code} | " \
-               f"{DiscountTypes(self.discount_type).label}"
+        return f'{self.code} | {self.amount} | {self.is_active}'
 
 
 class Order(LifecycleModelMixin, PKMixin):
@@ -43,10 +38,7 @@ class Order(LifecycleModelMixin, PKMixin):
         null=True,
         blank=True
     )
-    products = models.ManyToManyField(
-        "products.Product",
-        through='orders.OrderProductRelation'
-    )
+    products = models.ManyToManyField("products.Product")
     discount = models.ForeignKey(
         Discount,
         on_delete=models.SET_NULL,
@@ -56,60 +48,25 @@ class Order(LifecycleModelMixin, PKMixin):
     is_active = models.BooleanField(default=True)
     is_paid = models.BooleanField(default=False)
 
-    class Meta:
-        constraints = [
-            models.UniqueConstraint(fields=['user'],
-                                    condition=models.Q(is_active=True),
-                                    name='unique_is_active')
-        ]
+    def get_discount_total_amount(self):
+        if self.discount:
+            if self.products.exists():
+                if self.discount.discount_type == DiscountTypes.VALUE:
+                    self.total_amount -= self.discount.amount
+                else:
+                    self.total_amount -= (
+                            self.total_amount / 100 * self.discount.amount).quantize( # noqa
+                        Decimal('.01'))
+        return self.total_amount
 
-    @property
-    def is_current_order(self):
-        return self.is_active and not self.is_paid
-
-    def get_total_amount(self):
-        return self.products.through.objects.annotate(
-            full_price=F('product__price') * F('quantity')
-        ).aggregate(
-            total_amount=Case(
-                When(
-                    order__discount__discount_type=DiscountTypes.VALUE,
-                    then=Sum('full_price') - F('order__discount__amount')
-                ),
-                When(
-                    order__discount__discount_type=DiscountTypes.PERCENT,
-                    then=Sum('full_price') - (
-                            Sum('full_price'
-                                ) * F('order__discount__amount') / 100
-                    )
-                ),
-                default=Sum('full_price'),
-                output_field=models.DecimalField()
-            )
-        ).get('total_amount') or 0
+    @hook(BEFORE_SAVE)
+    def order_after_save(self):
+        self.total_amount = 0
+        for product in self.products.all():
+            self.total_amount += product.price
 
     @hook(AFTER_UPDATE)
     def order_after_update(self):
-        if self.products.exists():
-            self.total_amount = self.get_total_amount()
+        if self.discount:
+            self.total_amount = self.get_discount_total_amount()
             self.save(update_fields=('total_amount',), skip_hooks=True)
-
-    @hook(BEFORE_UPDATE, when='is_paid', has_changed=True, was=False)
-    def order_is_paid(self):
-        self.is_active = False
-
-
-class OrderProductRelation(models.Model):
-    order = models.ForeignKey(
-        Order,
-        on_delete=models.CASCADE
-    )
-    product = models.ForeignKey(
-        'products.Product',
-        on_delete=models.CASCADE,
-        related_name='orders'
-    )
-    quantity = models.PositiveSmallIntegerField(default=1)
-
-    class Meta:
-        unique_together = ('order', 'product')

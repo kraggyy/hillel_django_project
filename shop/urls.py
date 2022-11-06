@@ -9,26 +9,26 @@ Class-based views
     1. Add an import:  from other_app.views import Home
     2. Add a URL to urlpatterns:  path('', Home.as_view(), name='home')
 Including another URLconf
-    1. Import the include() function: from django.urls import include, path
+    1. Import include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.conf import settings
 from django.contrib import admin
 from django.urls import path, include
 
-from feedbacks.urls import urlpatterns as feedbacks_urlpatterns
-from products.urls import urlpatterns as items_urlpatterns
-from main.urls import urlpatterns as main_urlpatterns
-from users.urls import urlpatterns as users_urlpatterns
-from orders.urls import urlpatterns as orders_urlpatterns
+from feedbacks.urls import urlpatterns as feedbacks_urls
+from main.urls import urlpatterns as main_urls
+from products.urls import urlpatterns as products_urls
+from users.urls import urlpatterns as users_urls
+from orders.urls import urlpatterns as orders_urls
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include(items_urlpatterns)),
-    path('', include(users_urlpatterns)),
-    path('', include(feedbacks_urlpatterns)),
-    path('', include(main_urlpatterns)),
-    path('', include(orders_urlpatterns)),
+    path('', include(products_urls)),
+    path('', include(feedbacks_urls)),
+    path('', include(users_urls)),
+    path('', include(main_urls)),
+    path('', include(orders_urls))
 ]
 
 if settings.DEBUG:
@@ -36,5 +36,6 @@ if settings.DEBUG:
 
     urlpatterns += static(settings.MEDIA_URL,
                           document_root=settings.MEDIA_ROOT)
+
     urlpatterns += static(settings.STATIC_URL,
                           document_root=settings.STATIC_ROOT)
