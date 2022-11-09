@@ -9,18 +9,17 @@ class Migration(migrations.Migration):
     initial = True
 
     dependencies = [
+        ('products', '0001_initial'),
     ]
 
     operations = [
         migrations.CreateModel(
-            name='CurrencyHistory',
+            name='Favourites',
             fields=[
                 ('id', models.UUIDField(default=uuid.uuid4, editable=False, primary_key=True, serialize=False)), # noqa
                 ('created_at', models.DateTimeField(auto_now_add=True)),
                 ('updated_at', models.DateTimeField(auto_now=True)),
-                ('currency', models.CharField(choices=[('UAH', 'UAH'), ('USD', 'USD'), ('EUR', 'EUR')], default='USD', max_length=3)), # noqa
-                ('buy', models.DecimalField(decimal_places=2, default=1, max_digits=8)), # noqa
-                ('sale', models.DecimalField(decimal_places=2, default=1, max_digits=8)), # noqa
+                ('products', models.ManyToManyField(to='products.Product')),
             ],
             options={
                 'abstract': False,

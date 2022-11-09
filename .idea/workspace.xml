@@ -2,36 +2,38 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ba6037fe-5505-44ca-a605-420fd94cccf3" name="Changes" comment="celerybeat + currencies">
-      <change afterPath="$PROJECT_DIR$/media/images/category/ea948a60-d970-4573-bc40-76224946fb4e/image.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/images/category/ea948a60-d970-4573-bc40-76224946fb4e/image_ebRVX3o.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/images/category/ed8bce4a-befb-47f0-84bc-12b80710406e/image.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/images/product/3a6155cb-4c23-42cb-8c05-7e550f32d4a3/image.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/images/product/a4bc7796-9e88-4ce1-b8f4-a6b38090a2e7/image.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/images/product/fc4685cf-b7cb-486d-ba3a-8d545d6dec3f/image.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static_dev/images/PizzaHut.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static_dev/images/main/our-story-feature_img.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static_dev/images/no_prod/none.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/orders/shopping_cart_view.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/orders/successful_pay.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/favourites/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/favourites/admin.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/favourites/apps.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/favourites/forms.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/favourites/migrations/0001_initial.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/favourites/migrations/0002_favourites_user.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/favourites/migrations/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/favourites/mixins.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/favourites/models.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/favourites/urls.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/favourites/views.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/feedbacks/migrations/0002_feedback_user.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/images/category/a63c451c-9acc-4029-ad6d-872998513026/image.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/images/product/314b32b8-cf09-4bd0-b8b7-e868304118a8/image.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/orders/migrations/0002_order_user.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/favourites/product_favourite.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/users/migrations/0001_initial.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/currencies/migrations/0001_initial.py" beforeDir="false" afterPath="$PROJECT_DIR$/currencies/migrations/0001_initial.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/feedbacks/migrations/0001_initial.py" beforeDir="false" afterPath="$PROJECT_DIR$/feedbacks/migrations/0001_initial.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/orders/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/orders/admin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/orders/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/orders/forms.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/orders/migrations/0001_initial.py" beforeDir="false" afterPath="$PROJECT_DIR$/orders/migrations/0001_initial.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/orders/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/orders/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/orders/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/orders/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/orders/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/orders/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/products/migrations/0001_initial.py" beforeDir="false" afterPath="$PROJECT_DIR$/products/migrations/0001_initial.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/products/migrations/0002_product_currency.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/shop/settings.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/shop/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/shop/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/items/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/main/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/main/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/orders/cart.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/parts/footer.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/parts/footer.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/parts/header.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/parts/header.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/products/product_detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/products/product_detail.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/products/product_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/products/product_list.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/users/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/users/forms.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users/model_forms.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/users/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/users/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/users/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/users/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -73,17 +75,17 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "DefaultHtmlFileTemplate": "HTML File",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "last_opened_file_path": "/home/daniel/PycharmProjects/hillel_django_project/static_dev/images/no_prod",
-    "settings.editor.selected.configurable": "preferences.pluginManager"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/daniel/PycharmProjects/hillel_django_project/static_dev/images/no_prod&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/static_dev/images/no_prod" />
