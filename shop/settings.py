@@ -49,13 +49,15 @@ INSTALLED_APPS = [
     'django_celery_results',
     'django_celery_beat',
     # own apps
-    'products',
-    'orders',
-    'users',
-    'feedbacks',
     'main',
+    'products',
+    'favourites',
+    'orders',
+    'feedbacks',
+    'users',
+    'tracking',
     'currencies',
-    'favourites'
+    'phonenumber_field',
 ]
 
 MIDDLEWARE = [
@@ -66,11 +68,11 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-
+    'shop.middlewares.ErrorTraceMiddleware',
 ]
 
 ROOT_URLCONF = 'shop.urls'
-
+APPEND_SLASH = True
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
@@ -117,6 +119,12 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 AUTH_USER_MODEL = 'users.User'
+
+AUTHENTICATION_BACKENDS = [
+    'django.contrib.auth.backends.ModelBackend',
+    'users.backends.PhoneModelBackend'
+]
+
 # Internationalization
 # https://docs.djangoproject.com/en/3.2/topics/i18n/
 

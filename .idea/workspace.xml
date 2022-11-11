@@ -1,36 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ba6037fe-5505-44ca-a605-420fd94cccf3" name="Changes" comment="celerybeat + currencies">
-      <change afterPath="$PROJECT_DIR$/favourites/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/favourites/admin.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/favourites/apps.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/favourites/forms.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/favourites/migrations/0001_initial.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/favourites/migrations/0002_favourites_user.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/favourites/migrations/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/favourites/mixins.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/favourites/models.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/favourites/urls.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/favourites/views.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/feedbacks/migrations/0002_feedback_user.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/images/category/a63c451c-9acc-4029-ad6d-872998513026/image.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/images/product/314b32b8-cf09-4bd0-b8b7-e868304118a8/image.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/orders/migrations/0002_order_user.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/favourites/product_favourite.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/users/migrations/0001_initial.py" afterDir="false" />
+    <list default="true" id="ba6037fe-5505-44ca-a605-420fd94cccf3" name="Changes" comment="fav`s + usermodel">
+      <change afterPath="$PROJECT_DIR$/templates/parts/messages.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/registration/sign_up.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tracking/migrations/0001_initial.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/users/backends.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/users/migrations/0002_auto_20221111_1555.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/currencies/migrations/0001_initial.py" beforeDir="false" afterPath="$PROJECT_DIR$/currencies/migrations/0001_initial.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/feedbacks/migrations/0001_initial.py" beforeDir="false" afterPath="$PROJECT_DIR$/feedbacks/migrations/0001_initial.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/orders/migrations/0001_initial.py" beforeDir="false" afterPath="$PROJECT_DIR$/orders/migrations/0001_initial.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/products/migrations/0001_initial.py" beforeDir="false" afterPath="$PROJECT_DIR$/products/migrations/0001_initial.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/favourites/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/favourites/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/feedbacks/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/feedbacks/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orders/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/orders/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/shop/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/shop/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shop/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/shop/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/parts/header.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/parts/header.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static_dev/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/static_dev/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/orders/shopping_cart_view.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/orders/shopping_cart_view.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/products/product_detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/products/product_detail.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/registration/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/registration/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/registration/registration.html" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/users/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/users/admin.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/users/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/users/forms.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/users/model_forms.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/users/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/users/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/users/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/users/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/users/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/users/views.py" afterDir="false" />
@@ -256,7 +246,14 @@
       <option name="project" value="LOCAL" />
       <updated>1667491070297</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="fav`s + usermodel">
+      <created>1667994083326</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1667994083326</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -285,6 +282,7 @@
     <MESSAGE value="csv update" />
     <MESSAGE value="cart" />
     <MESSAGE value="celerybeat + currencies" />
-    <option name="LAST_COMMIT_MESSAGE" value="celerybeat + currencies" />
+    <MESSAGE value="fav`s + usermodel" />
+    <option name="LAST_COMMIT_MESSAGE" value="fav`s + usermodel" />
   </component>
 </project>
