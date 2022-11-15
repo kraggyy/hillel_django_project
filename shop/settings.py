@@ -48,6 +48,8 @@ INSTALLED_APPS = [
     'django_extensions',
     'django_celery_results',
     'django_celery_beat',
+    'silk',
+    "debug_toolbar",
     # own apps
     'main',
     'products',
@@ -58,6 +60,7 @@ INSTALLED_APPS = [
     'tracking',
     'currencies',
     'phonenumber_field',
+    'config'
 ]
 
 MIDDLEWARE = [
@@ -69,6 +72,8 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'shop.middlewares.ErrorTraceMiddleware',
+    'silk.middleware.SilkyMiddleware',
+    "debug_toolbar.middleware.DebugToolbarMiddleware",
 ]
 
 ROOT_URLCONF = 'shop.urls'
@@ -176,4 +181,18 @@ CACHES = {
         'BACKEND': 'django.core.cache.backends.filebased.FileBasedCache',
         'LOCATION': 'django_cache',
     }
+}
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = env('EMAIL_HOST', default='EMAIL_HOST')
+EMAIL_PORT = env('EMAIL_PORT', default='EMAIL_PORT')
+EMAIL_HOST_USER = env('EMAIL_HOST_USER', default='EMAIL_HOST_USER')
+EMAIL_HOST_PASSWORD = env('EMAIL_HOST_PASSWORD', default='EMAIL_HOST_PASSWORD')
+EMAIL_USE_TLS = env('EMAIL_USE_TLS', default=True)
+EMAIL_SUBJECT_PREFIX = 'PizzaHut'
+SERVER_EMAIL = EMAIL_HOST_USER
+
+DEBUG_TOOLBAR_CONFIG = {
+    'INSERT_BEFORE': '</head>',
+    'SHOW_TOOLBAR_CALLBACK': lambda x: DEBUG
 }
