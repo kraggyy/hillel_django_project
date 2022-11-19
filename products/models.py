@@ -18,7 +18,8 @@ def upload_image(instance, filename):
 class Category(PKMixin):
     name = models.CharField(max_length=255)
     description = models.TextField()
-    image = models.ImageField(upload_to=upload_image)
+    image = models.ImageField(upload_to='images/category',
+                              default='static/images/products/none.png')
 
     def __str__(self):
         return f'{self.name} | {self.description}'
@@ -27,7 +28,8 @@ class Category(PKMixin):
 class Product(PKMixin):
     name = models.CharField(max_length=255)
     description = models.TextField()
-    image = models.ImageField(upload_to=upload_image)
+    image = models.ImageField(upload_to='images/product',
+                              default='static/images/products/none.png')
     category = models.ForeignKey(
         "products.Category",
         on_delete=models.CASCADE

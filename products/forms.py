@@ -1,7 +1,6 @@
-import csv
-import decimal
-
 import codecs
+import csv
+
 from django import forms
 from django.core.exceptions import ValidationError
 from django.core.validators import FileExtensionValidator
@@ -9,33 +8,30 @@ from django.core.validators import FileExtensionValidator
 from products.models import Product, Category
 
 
-class ImportCSVForm(forms.Form):
-    file = forms.FileField(
-        validators=[FileExtensionValidator(['csv'])]
-    )
+class ImportForm(forms.Form):
+    csv_file = forms.FileField(validators=[FileExtensionValidator(['csv'])])
 
-    def clean_file(self):
-        csv_file = self.cleaned_data['file']
-        reader = csv.DictReader(codecs.iterdecode(csv_file, 'utf-8'))
-        products_list = []
-        for product in reader:
+    def clean_csv_file(self):
+        uploaded_file = self.cleaned_data['csv_file']
+        reader = csv.DictReader(codecs.iterdecode(uploaded_file, 'utf-8'))
+        product_list = []
+        for row in reader:
             try:
-                products_list.append(
+                product_list.append(
                     Product(
-                        name=product['name'],
-                        description=product['description'],
-                        price=decimal.Decimal(product['price']),
-                        sku=product['sku'],
+                        name=row['name'],
+                        description=row['description'],
+                        price=row['price'],
+                        sku=row['sku'],
                         category=Category.objects.get_or_create(
-                            name=product['category']
-                        )[0]
+                            name=row['name'])[0]
                     )
                 )
-            except (KeyError, decimal.InvalidOperation) as err:
-                raise ValidationError(err)
-        if not products_list:
-            raise ValidationError('Wrong file format.')
-        return products_list
+            except KeyError as error:
+                raise ValidationError(error)
+        if not product_list:
+            raise ValidationError("Wrong file")
+        return product_list
 
     def save(self):
-        Product.objects.bulk_create(self.cleaned_data['file'])
+        Product.objects.bulk_create(self.cleaned_data['csv_file'])
