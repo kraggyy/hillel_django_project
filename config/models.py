@@ -17,4 +17,4 @@ class SingletonModel(models.Model):
 
 
 class Config(SingletonModel):
-    contact_form_email = models.EmailField()
+    contact_form_email = models.EmailField(default='dan.tymoshenko228@gmail.com') # noqa
