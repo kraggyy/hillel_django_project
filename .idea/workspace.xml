@@ -1,46 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ba6037fe-5505-44ca-a605-420fd94cccf3" name="Changes" comment="contact form/silk">
-      <change afterPath="$PROJECT_DIR$/conftest.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/django_cache/4d50faa1f9404279db01a7827af3ebb2.djcache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/favourites/tests.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/images/product/83d0c8c6-fd88-4c99-8602-f03d0414da84/image.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/products/migrations/0002_alter_product_image.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pytest.ini" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/shop/mixins/views_mixins.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/shop/settings_tests.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.flake8" beforeDir="false" afterPath="$PROJECT_DIR$/.flake8" afterDir="false" />
+    <list default="true" id="ba6037fe-5505-44ca-a605-420fd94cccf3" name="Changes" comment="pytest">
+      <change afterPath="$PROJECT_DIR$/currencies/tests.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/migrations/0001_initial.py" beforeDir="false" afterPath="$PROJECT_DIR$/config/migrations/0001_initial.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/config/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/currencies/migrations/0001_initial.py" beforeDir="false" afterPath="$PROJECT_DIR$/currencies/migrations/0001_initial.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/favourites/migrations/0001_initial.py" beforeDir="false" afterPath="$PROJECT_DIR$/favourites/migrations/0001_initial.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/favourites/migrations/0002_favourites_user.py" beforeDir="false" afterPath="$PROJECT_DIR$/favourites/migrations/0002_favourites_user.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/favourites/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/favourites/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/feedbacks/migrations/0001_initial.py" beforeDir="false" afterPath="$PROJECT_DIR$/feedbacks/migrations/0001_initial.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/feedbacks/migrations/0002_feedback_user.py" beforeDir="false" afterPath="$PROJECT_DIR$/feedbacks/migrations/0002_feedback_user.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/tests.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/tests.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/orders/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/orders/admin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/orders/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/orders/forms.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/orders/migrations/0001_initial.py" beforeDir="false" afterPath="$PROJECT_DIR$/orders/migrations/0001_initial.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/orders/migrations/0002_order_user.py" beforeDir="false" afterPath="$PROJECT_DIR$/orders/migrations/0002_order_user.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/orders/mixins.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/orders/tests.py" beforeDir="false" afterPath="$PROJECT_DIR$/orders/tests.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/orders/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/orders/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/products/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/products/forms.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/products/migrations/0001_initial.py" beforeDir="false" afterPath="$PROJECT_DIR$/products/migrations/0001_initial.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/products/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/products/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/products/tasks.py" beforeDir="false" afterPath="$PROJECT_DIR$/products/tasks.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/products/tests.py" beforeDir="false" afterPath="$PROJECT_DIR$/products/tests.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/products/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/products/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/products/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/products/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/django_cache/4d50faa1f9404279db01a7827af3ebb2.djcache" beforeDir="false" afterPath="$PROJECT_DIR$/django_cache/4d50faa1f9404279db01a7827af3ebb2.djcache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/no_prod/none.png" beforeDir="false" afterPath="$PROJECT_DIR$/static/images/products/none.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static_dev/images/no_prod/none.png" beforeDir="false" afterPath="$PROJECT_DIR$/static_dev/images/products/none.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tracking/migrations/0001_initial.py" beforeDir="false" afterPath="$PROJECT_DIR$/tracking/migrations/0001_initial.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/users/migrations/0001_initial.py" beforeDir="false" afterPath="$PROJECT_DIR$/users/migrations/0001_initial.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/users/migrations/0002_auto_20221111_1555.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/users/tests.py" beforeDir="false" afterPath="$PROJECT_DIR$/users/tests.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -285,7 +250,21 @@
       <option name="project" value="LOCAL" />
       <updated>1668536160826</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="pytest">
+      <created>1668850325376</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1668850325376</updated>
+    </task>
+    <task id="LOCAL-00026" summary="pytest">
+      <created>1668850397460</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1668850397460</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -317,6 +296,7 @@
     <MESSAGE value="fav`s + usermodel" />
     <MESSAGE value="phone/email/system messages" />
     <MESSAGE value="contact form/silk" />
-    <option name="LAST_COMMIT_MESSAGE" value="contact form/silk" />
+    <MESSAGE value="pytest" />
+    <option name="LAST_COMMIT_MESSAGE" value="pytest" />
   </component>
 </project>
