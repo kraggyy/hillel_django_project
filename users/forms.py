@@ -42,7 +42,7 @@ class SignUpModelForm(forms.ModelForm):
         password1 = self.cleaned_data['password1']
         password2 = self.cleaned_data['password2']
         if password1 and password2 and password1 != password2:
-            raise ValidationError("Passwords aren't same")
+            raise ValidationError("Passwords arent equal")
         return self.cleaned_data
 
     def save(self, commit=True):
@@ -65,7 +65,7 @@ class CustomAuthenticationForm(AuthenticationForm):
         phone = self.cleaned_data.get('phone')
 
         if not username and not phone:
-            raise ValidationError('Email or phone number is required')
+            raise ValidationError('Email ot phone number is required')
         if password:
             kwargs = {'password': password, 'username': username}
             if phone and not username:
