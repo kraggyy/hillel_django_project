@@ -22,3 +22,4 @@ coverage==6.5.0
 pytest_factoryboy==2.5.0
 django-factory-boy==1.0.0
 factory-boy==3.2.1
+beautifulsoup4==4.11.1
