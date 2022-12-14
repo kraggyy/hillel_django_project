@@ -4,12 +4,23 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ba6037fe-5505-44ca-a605-420fd94cccf3" name="Changes" comment="factoryboy">
-      <change afterPath="$PROJECT_DIR$/products/client/client.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/shop/api_clients.py" afterDir="false" />
+    <list default="true" id="ba6037fe-5505-44ca-a605-420fd94cccf3" name="Changes" comment="parser">
+      <change afterPath="$PROJECT_DIR$/shop/helpers.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/emails/sign_up/sign_up_confirm_email.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/emails/sign_up/sign_up_confirm_subject.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/products/product_used.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/registration/sign_up_phone_confirm.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/users/migrations/0002_alter_user_phone.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/users/tasks.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/currencies/clients/client.py" beforeDir="false" afterPath="$PROJECT_DIR$/currencies/clients/client.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/conftest.py" beforeDir="false" afterPath="$PROJECT_DIR$/conftest.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/shop/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/users/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/users/forms.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/users/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users/tests.py" beforeDir="false" afterPath="$PROJECT_DIR$/users/tests.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/users/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/users/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -19,8 +30,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="HTML File" />
         <option value="Python Script" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -274,7 +285,14 @@
       <option name="project" value="LOCAL" />
       <updated>1670402792242</updated>
     </task>
-    <option name="localTasksCounter" value="28" />
+    <task id="LOCAL-00028" summary="parser">
+      <created>1670849811913</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1670849811913</updated>
+    </task>
+    <option name="localTasksCounter" value="29" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -308,6 +326,7 @@
     <MESSAGE value="contact form/silk" />
     <MESSAGE value="pytest" />
     <MESSAGE value="factoryboy" />
-    <option name="LAST_COMMIT_MESSAGE" value="factoryboy" />
+    <MESSAGE value="parser" />
+    <option name="LAST_COMMIT_MESSAGE" value="parser" />
   </component>
 </project>
