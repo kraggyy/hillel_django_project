@@ -23,6 +23,12 @@ def faker():
     yield fake
 
 
+@pytest.fixture
+def cache_code(request):
+    cache_code = request.config.cache.get('1_code', 00000)
+    yield cache_code
+
+
 @pytest.fixture(scope='function')
 def user(db):
     user, _ = User.objects.get_or_create(
@@ -145,12 +151,12 @@ class ProductFactory(factory.django.DjangoModelFactory):
 def login_user(db):
     phone = '+380971778402'
     password = '380971778402'
-#    user, _ = User.objects.get_or_create(
-#        email='user@user.com',
-#        first_name='John Smith',
-#        phone='+380971778402',
-#        is_phone_valid=True
-#    )
+    #    user, _ = User.objects.get_or_create(
+    #        email='user@user.com',
+    #        first_name='John Smith',
+    #        phone='+380971778402',
+    #        is_phone_valid=True
+    #    )
     user = UserFactory(phone=phone, is_phone_valid=True)
     user.set_password(password)
     user.save()
