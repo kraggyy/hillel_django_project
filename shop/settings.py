@@ -50,6 +50,8 @@ INSTALLED_APPS = [
     'django_celery_beat',
     'silk',
     "debug_toolbar",
+    'widget_tweaks',
+    'rest_framework',
     # own apps
     'main',
     'products',
@@ -102,7 +104,7 @@ WSGI_APPLICATION = 'shop.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3.1',
     }
 }
 
