@@ -6,5 +6,5 @@ from shop.mixins.models_mixins import PKMixin
 
 
 class Favourites(PKMixin):
-    products = models.ManyToManyField(Product)
-    user = models.ForeignKey(get_user_model(), on_delete=models.CASCADE)
+    products = models.ManyToManyField(Product, related_name='in_favourites')
+    user = models.ForeignKey(get_user_model(), on_delete=models.CASCADE)  # noqa

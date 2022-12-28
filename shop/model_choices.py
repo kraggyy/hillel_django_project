@@ -2,8 +2,8 @@ from django.db.models import IntegerChoices, TextChoices
 
 
 class DiscountTypes(IntegerChoices):
-    VALUE = 0, 'Value'
-    PERCENT = 1, 'Percent'
+    VALUE = 0, 'In money'
+    PERCENT = 1, 'In percent'
 
 
 class Currency(TextChoices):
