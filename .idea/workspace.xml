@@ -4,22 +4,42 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-
-    <list default="true" id="ba6037fe-5505-44ca-a605-420fd94cccf3" name="Changes" comment="parser">
-      <change afterPath="$PROJECT_DIR$/api/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/api/products/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/api/products/serializers.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/api/products/urls.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/api/products/views.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/api/urls.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/db.sqlite3.1" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/django_cache/4d50faa1f9404279db01a7827af3ebb2.djcache" beforeDir="false" />
+    <list default="true" id="ba6037fe-5505-44ca-a605-420fd94cccf3" name="Changes" comment="products api">
+      <change afterPath="$PROJECT_DIR$/api/authentication.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api/feedbacks/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api/feedbacks/serializers.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api/feedbacks/urls.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api/feedbacks/views.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api/products/filters.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/favourites/migrations/0003_alter_favourites_products.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/orders/migrations/0003_alter_discount_discount_type.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/products/filters.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/products/migrations/0003_auto_20221228_1805.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/shop/decorators.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static_dev/script.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/products/serializers.py" beforeDir="false" afterPath="$PROJECT_DIR$/api/products/serializers.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/products/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/api/products/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/products/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/api/products/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/api/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db.sqlite3.1" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3.1" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/favourites/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/favourites/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/favourites/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/favourites/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/favourites/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/favourites/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/products/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/products/forms.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/products/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/products/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/products/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/products/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/shop/mixins/views_mixins.py" beforeDir="false" afterPath="$PROJECT_DIR$/shop/mixins/views_mixins.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop/model_choices.py" beforeDir="false" afterPath="$PROJECT_DIR$/shop/model_choices.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/shop/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/shop/settings.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/shop/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/shop/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/feedbacks/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/feedbacks/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/products/product_detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/products/product_detail.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/products/product_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/products/product_list.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/products/product_used.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/products/product_used.html" afterDir="false" />
     </list>
-
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -36,27 +56,17 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="dev" />
+        <entry key="$PROJECT_DIR$" value="main" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="UPDATE_TYPE" value="REBASE" />
   </component>
-  <component name="GitHubPullRequestSearchHistory">{
-  &quot;history&quot;: [
-    {
-      &quot;state&quot;: &quot;CLOSED&quot;
-    }
-  ],
-  &quot;lastFilter&quot;: {
-    &quot;state&quot;: &quot;CLOSED&quot;
-  }
-}</component>
-  <component name="GithubPullRequestsUISettings">
-    <option name="selectedUrlAndAccountId">
-      <UrlAndAccount>
-        <option name="accountId" value="b6664fd7-d34c-4287-9a2a-bd1f641c9be3" />
-        <option name="url" value="https://github.com/kraggyy/hillel_django_project.git" />
-      </UrlAndAccount>
+  <component name="GithubProjectSettings">
+    <option name="branchProtectionPatterns">
+      <list>
+        <option value="main" />
+      </list>
     </option>
   </component>
   <component name="HighlightingSettingsPerFile">
@@ -303,7 +313,14 @@
       <option name="project" value="LOCAL" />
       <updated>1670849811913</updated>
     </task>
-    <option name="localTasksCounter" value="29" />
+    <task id="LOCAL-00029" summary="products api">
+      <created>1671620638891</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1671620638891</updated>
+    </task>
+    <option name="localTasksCounter" value="30" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -338,6 +355,7 @@
     <MESSAGE value="pytest" />
     <MESSAGE value="factoryboy" />
     <MESSAGE value="parser" />
-    <option name="LAST_COMMIT_MESSAGE" value="parser" />
+    <MESSAGE value="products api" />
+    <option name="LAST_COMMIT_MESSAGE" value="products api" />
   </component>
 </project>

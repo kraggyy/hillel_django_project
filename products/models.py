@@ -1,57 +1,68 @@
+from os import path
+
 from django.core.cache import cache
 from django.db import models
-from django_lifecycle import LifecycleModelMixin, hook, \
-    AFTER_DELETE, AFTER_SAVE
+from django_lifecycle import hook, AFTER_DELETE, AFTER_SAVE
 
-from currencies.models import CurrencyHistory  # noqa
-from shop.constants import DECIMAL_PLACES, MAX_DIGITS
+from shop.constants import MAX_DIGITS, DECIMAL_PLACES
 from shop.mixins.models_mixins import PKMixin
 from shop.model_choices import Currency
 
 
-class Product(LifecycleModelMixin, PKMixin):
+def upload_image(instance, filename):
+    _name, extension = path.splitext(filename)
+    return f'images/{instance.__class__.__name__.lower()}/' \
+           f'{instance.pk}/image{extension}'
+
+
+class Category(PKMixin):
     name = models.CharField(max_length=255)
-    description = models.TextField(blank=True)
+    description = models.TextField()
+    image = models.ImageField(upload_to='images/category',
+                              default='static/images/products/none.png')
+
+    def __str__(self):
+        return f'{self.name} | {self.description}'
+
+
+class Product(PKMixin):
+    name = models.CharField(max_length=255)
+    description = models.TextField()
     image = models.ImageField(upload_to='images/product',
-                              default='static/images/products/no_image.jpg')
+                              default='static/images/products/none.png')
     category = models.ForeignKey(
-        'products.Category',
-        on_delete=models.CASCADE)
-    used = models.BooleanField(default=False)
+        "products.Category",
+        on_delete=models.CASCADE
+    )
     price = models.DecimalField(
         max_digits=MAX_DIGITS,
         decimal_places=DECIMAL_PLACES,
         default=0
     )
-    actual_price = models.DecimalField(
-        max_digits=MAX_DIGITS,
-        decimal_places=DECIMAL_PLACES,
-        default=0
+    sku = models.CharField(
+        max_length=32,
+        blank=True,
+        null=True
     )
     currency = models.CharField(
         max_length=3,
         choices=Currency.choices,
         default=Currency.USD
     )
-    sku = models.CharField(
-        max_length=64,
-        blank=True,
-        null=True)
     products = models.ManyToManyField('products.Product', blank=True)
 
     def __str__(self):
-        return f'{self.name}'
+        return f'{self.name} | {self.price} | {self.sku}'
 
     @classmethod
-    def _cache_key(cls):
+    def _cache_key(self):
         return 'products'
 
     @classmethod
     def get_products(cls):
         products = cache.get(cls._cache_key())
         if not products:
-            products = Product.objects.select_related('category')\
-                .prefetch_related('products__products').all()
+            products = Product.objects.all()
             cache.set(cls._cache_key(), products)
         return products
 
@@ -59,13 +70,3 @@ class Product(LifecycleModelMixin, PKMixin):
     @hook(AFTER_DELETE)
     def clear_products_cache(self):
         cache.delete(self._cache_key())
-
-
-class Category(PKMixin):
-    name = models.CharField(max_length=255)
-    description = models.TextField(blank=True)
-    image = models.ImageField(upload_to='images/category',
-                              default='static/images/products/no_image.jpg')
-
-    def __str__(self):
-        return f'{self.name} | {self.description}'

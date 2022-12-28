@@ -52,6 +52,8 @@ INSTALLED_APPS = [
     "debug_toolbar",
     'widget_tweaks',
     'rest_framework',
+    'django_filters',
+    'drf_yasg',
     # own apps
     'main',
     'products',
@@ -198,4 +200,13 @@ NOREPLY_EMAIL = 'noreply@gmail.com'
 DEBUG_TOOLBAR_CONFIG = {
     'INSERT_BEFORE': '</head>',
     'SHOW_TOOLBAR_CALLBACK': lambda x: DEBUG
+}
+
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+        'api.authentication.TokenAuthentication',
+    ],
+    'DEFAULT_FILTER_BACKENDS': (
+        'django_filters.rest_framework.DjangoFilterBackend',
+    )
 }
