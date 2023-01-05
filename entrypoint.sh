@@ -1,6 +1,6 @@
 #!/bin/sh
 
-if [ "$DB_NAME" = "database" ]
+if [ "$DB_NAME" = "db_shop" ]
 then
     echo "Waiting for postgres..."
 
@@ -12,5 +12,6 @@ then
 fi
 
 python manage.py migrate
+python manage.py collectstatic --noinput
 
 exec "$@"
